@@ -8,7 +8,7 @@ package Chain;
  *
  * @author gabri
  */
-class Producto {
+public class Producto {
     
     public boolean garantia;
     public int precio;

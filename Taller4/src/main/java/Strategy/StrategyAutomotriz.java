@@ -13,11 +13,12 @@ import java.util.LinkedList;
  * @author User
  */
 public class StrategyAutomotriz implements RouteStrategy {
-    
-    private LinkedList<Producto> Productos;
+    private Map <Producto,Integer> producto;
+    //private LinkedList<Producto> Productos;
     private Route origen;
     private Route destino;
     private boolean Viajando;
+    int capacity;
     @Override
     public void roadBuildStrategy(Route origin, Route destiny) {
         this.origen = origin;
@@ -30,19 +31,19 @@ public class StrategyAutomotriz implements RouteStrategy {
     }
 
     public void setProduct(Producto product) {
-            this.Productos.add(product);
+            this.producto.get(product);
     }
 
     public StrategyAutomotriz() {
-        this.Productos = new LinkedList<Producto>();
+        this.producto = new HashMap<Producto,Integer>();
     }
 
-    public LinkedList<Producto> getProductos() {
-        return Productos;
+    public Map<Producto,Integer> getProductos() {
+        return producto;
     }
 
-    public void setProductos(LinkedList<Producto> Productos) {
-        this.Productos = Productos;
+    public void setProductos(Map<Producto,Integer> Productos) {
+        this.producto = Productos;
     }
 
     public Route getOrigen() {
@@ -67,6 +68,22 @@ public class StrategyAutomotriz implements RouteStrategy {
 
     public void setViajando(boolean Viajando) {
         this.Viajando = Viajando;
+    }
+
+    public Map<Producto, Integer> getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Map<Producto, Integer> producto) {
+        this.producto = producto;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
    
